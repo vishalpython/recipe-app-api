@@ -1,0 +1,11 @@
+language : python
+python :
+  - "3.6"
+
+services :
+  -vagrant
+
+before_script: pip install vagrant-compose
+
+sript:
+  -vagrant-compose run  recipe_app sh -c "python manage.py test && flake8"
